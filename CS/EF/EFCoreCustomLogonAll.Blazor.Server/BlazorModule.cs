@@ -26,6 +26,7 @@ public sealed class EFCoreCustomLogonAllBlazorModule : ModuleBase {
     }
     public override void Setup(XafApplication application) {
         base.Setup(application);
+        // In Middle Tier mode, the server must also call AnonymousAllowedTypes.AddSharedModelDifferences (see the Middle Tier Startup.cs file).
         //application.CreateCustomModelDifferenceStore += Application_CreateCustomModelDifferenceStore;
         application.CreateCustomUserModelDifferenceStore += Application_CreateCustomUserModelDifferenceStore;
     }

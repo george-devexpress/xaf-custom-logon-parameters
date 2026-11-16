@@ -67,8 +67,8 @@ public class Startup {
                     // If you use PermissionPolicyUser or a custom user type, comment out the following line:
                     options.UserLoginInfoType = typeof(EFCoreCustomLogonAll.Module.BusinessObjects.ApplicationUserLoginInfo);
                     options.Events.OnSecurityStrategyCreated += securityStrategy => {
-                        //((SecurityStrategy)securityStrategy).AnonymousAllowedTypes.Add(typeof(DevExpress.Persistent.BaseImpl.EF.ModelDifference));
-                        //((SecurityStrategy)securityStrategy).AnonymousAllowedTypes.Add(typeof(DevExpress.Persistent.BaseImpl.EF.ModelDifferenceAspect));
+                        // Uncomment the following line if shared model differences are stored in the database (see Application_CreateCustomModelDifferenceStore in the platform-specific modules).
+                        //((SecurityStrategy)securityStrategy).AnonymousAllowedTypes.AddSharedModelDifferences<DevExpress.Persistent.BaseImpl.EF.ModelDifference>();
                         ((SecurityStrategy)securityStrategy).PermissionsReloadMode = PermissionsReloadMode.CacheOnFirstAccess;
                     };
                 })
